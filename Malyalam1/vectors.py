@@ -7,8 +7,12 @@ Created on Sat Mar 30 18:29:58 2019
 """
 
 from typing import List
-
+from indicnlp.normalize.indic_normalize import IndicNormalizerFactory
 import math
+input_text="കവിത "
+factory=IndicNormalizerFactory()
+normalizer=factory.get_normalizer("hi",remove_nuktas)
+output_text=normalizer.normalize(input_text)
 
 Vector = List[float]
 
