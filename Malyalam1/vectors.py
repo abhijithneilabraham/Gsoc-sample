@@ -9,10 +9,7 @@ Created on Sat Mar 30 18:29:58 2019
 from typing import List
 from indicnlp.normalize.indic_normalize import IndicNormalizerFactory
 import math
-input_text="കവിത "
-factory=IndicNormalizerFactory()
-normalizer=factory.get_normalizer("hi",remove_nuktas)
-output_text=normalizer.normalize(input_text)
+
 
 Vector = List[float]
 
@@ -32,8 +29,13 @@ def sub(v1: Vector, v2: Vector) -> Vector:
     return [x - y for (x,y) in zip(v1, v2)]
 
 def normalize(v: Vector) -> Vector:
-    l = l2_len(v)
-    return [x / l for x in v]
+    factory=IndicNormalizerFactory()
+    remove_nuktas=False
+   
+    normalizer=factory.get_normalizer("hi",remove_nuktas)
+    output_text=normalizer.normalize(v)
+    return output_text
+   
 
 def cosine_similarity_normalized(v1: Vector, v2: Vector) -> float:
     """
