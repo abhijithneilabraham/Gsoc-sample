@@ -17,7 +17,7 @@ import facebook
 
 ID = 'CreativeIdeass'
 
-TOKEN = ''  # access token 
+token='enter token here'
 SAFE_CHARS = '-_() abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
 def save(res, name='data'):
@@ -31,7 +31,7 @@ def read(name='data'):
         res = pickle.load(f)
     return res
 
-def fetch(limit=1000, depth=10, last=None, id=ID, token=TOKEN):
+def fetch(limit=1000, depth=10, last=None, id=ID, token=token):
     """Fetch the data using Facebook's Graph API"""
     lst = []
     graph = facebook.GraphAPI(token)
@@ -73,9 +73,9 @@ def process(res, dat):
             name = src[src.rfind('/')+1:]
         res.append({'name': name, 'src': src})
     if err:
-        print '%d errors.' % len(err)
-        print err
-    print '%d photos found.' % len(dat)
+        print('%d errors.' % len(err))
+        print(err)
+    print('%d photos found.' % len(dat))
 
 def download(res):
     """Download the list of files"""
@@ -87,7 +87,7 @@ def download(res):
         # try to get a higher resolution of the photo
         p['src'] = p['src'].replace('_s', '_n')
         urllib.urlretrieve(p['src'], p['name'])
-    print "Downloaded %s pictures in %.3f sec." % (len(res), time.clock()-start)
+    print("Downloaded %s pictures in %.3f sec." % (len(res), time.clock()-start))
 
 if __name__ == '__main__':
     # download 500 photos, fetch details about 100 at a time
