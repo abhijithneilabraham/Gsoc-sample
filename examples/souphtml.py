@@ -16,12 +16,12 @@ f.close()
 
 from bs4 import BeautifulSoup
 import urllib.request
-response = urllib.request.urlopen('https://twitter.com/sachin_rt?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor')
+response = urllib.request.urlopen('https://www.facebook.com/SachinTendulkar/')
 html_doc = response.read()
 
 soup = BeautifulSoup(html_doc, 'html.parser')
 print(soup.prettify())
-for link in soup.find_all('.jpg'):
+for link in soup.find_all('img'):
     print(link.get('href'))
     
     
