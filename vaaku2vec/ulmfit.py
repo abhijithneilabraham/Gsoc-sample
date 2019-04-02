@@ -1,5 +1,6 @@
 import numpy as np
 from fastai.text import *
+from fastai.lm_rnn import get_rnn_classifer
 import html
 from nltk import word_tokenize
 
