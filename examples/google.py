@@ -5,7 +5,7 @@ Created on Wed Apr  3 00:47:17 2019
 
 @author: abhijithneilabraham
 """
-from pattern.web import Google
+from pattern.web import Twitter
 
 s = "C'est un lapin, lapin de bois. Quoi? Un cadeau."
 g = Google()
