@@ -1,2 +1,3 @@
-# Malayalam-NLP
-Using malayalam word embeddings and training for integrating into api services for social media,text classification and other applications
+
+
+Trying out example programs to learn hard for Google summer of code.
