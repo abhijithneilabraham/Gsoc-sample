@@ -5,7 +5,6 @@ Created on Thu Apr 11 19:45:22 2019
 
 @author: abhijithneilabraham
 """
-from google.cloud import vision
 
 def detect_text(path):
     """Detects text in the file."""
