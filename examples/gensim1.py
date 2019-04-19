@@ -8,8 +8,6 @@ Created on Sat Apr  6 01:15:22 2019
 
 from gensim.summarization.summarizer import summarize
 from pattern.web import URL, PDF
-url = URL('http://www.clips.ua.ac.be/sites/default/files/ctrs-002_0.pdf')
-pdf = PDF(url.download())   
-text = pdf.string
-print(text)
-print(summarize(text))
+pdf2=PDF('forests-10-00219-v2.pdf')
+text2=pdf2.string
+print(summarize(text2))
