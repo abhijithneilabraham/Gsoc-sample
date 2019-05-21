@@ -6,24 +6,17 @@ Created on Thu Apr 11 19:45:22 2019
 @author: abhijithneilabraham
 """
 
-def detect_text(path):
-    """Detects text in the file."""
-    from google.cloud import vision
-    client = vision.ImageAnnotatorClient()
+try:  
+    from PIL import Image
+except ImportError:  
+    import Image
+import pytesseract
 
-    with io.open(path, 'rb') as image_file:
-        content = image_file.read()
+def ocr_core(filename):  
+    """
+    This function will handle the core OCR processing of images.
+    """
+    text = pytesseract.image_to_string(Image.open(filename))  # We'll use Pillow's Image class to open the image and pytesseract to detect the string in the image
+    return text
 
-    image = vision.types.Image(content=content)
-
-    response = client.text_detection(image=image)
-    texts = response.text_annotations
-    print('Texts:')
-
-    for text in texts:
-        print('\n"{}"'.format(text.description))
-
-        vertices = (['({},{})'.format(vertex.x, vertex.y)
-                    for vertex in text.bounding_poly.vertices])
-
-        print('bounds: {}'.format(','.join(vertices)))
+print(ocr_core('download.jpeg')) 
