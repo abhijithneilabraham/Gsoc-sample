@@ -7,7 +7,7 @@ Created on Tue May 21 11:45:21 2019
 """
 
 import smtplib, ssl
-sender_email="abhijithneilabraham@gmail.com"
+sender_email="abhijithneilabrahampk@gmail.com"
 receiver_email="augustinjose1221@gmail.com"
 port = 465  # For SSL
 password = input("enter password here")
@@ -16,5 +16,5 @@ password = input("enter password here")
 context = ssl.create_default_context()
 
 with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
-    server.login("abhijithneilabraham@gmail.com", password)
+    server.login("abhijithneilabrahampk@gmail.com", password)
     server.sendmail(sender_email, receiver_email, "helllo")
