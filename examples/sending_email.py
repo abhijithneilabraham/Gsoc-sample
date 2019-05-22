@@ -5,7 +5,10 @@ Created on Tue May 21 11:45:21 2019
 
 @author: abhijithneilabraham
 """
+"""
+remember to turn on less secure apps option on gmail
 
+"""
 import smtplib, ssl
 sender_email="abhijithneilabrahampk@gmail.com"
 receiver_email="augustinjose1221@gmail.com"
